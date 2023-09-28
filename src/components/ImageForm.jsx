@@ -1,18 +1,32 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
+const FormWrapper = styled.div`
+  border: solid 2px white;
+
+  input[type="text"] {
+    background-color: #d39797;
+  }
+  ::placeholder {
+    color: #060000;
+    font-family: sans-serif;
+    
+  }
+`;
 
 export const ImageForm = ({ onAddImage }) => {
   const [imgUrl, setImgUrl] = useState("");
   const [imgCaption, setImgCaption] = useState("");
 
   const handleClick = (e) => {
-    onAddImage({ imageUrl: imgUrl, caption: imgCaption }); // Use object property names imageUrl and caption
+    onAddImage({ imageUrl: imgUrl, caption: imgCaption });
     setImgUrl("");
     setImgCaption("");
   };
 
   return (
     <>
-      <form>
+      <FormWrapper>
         <input
           type="text"
           placeholder="Image URL"
@@ -30,7 +44,7 @@ export const ImageForm = ({ onAddImage }) => {
         <button type="button" onClick={handleClick}>
           Add to the Board
         </button>
-      </form>
+      </FormWrapper>
     </>
   );
 };

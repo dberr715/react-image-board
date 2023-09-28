@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ImageForm } from "./components/ImageForm";
 import { ImageList } from "./components/ImageList";
+import styled from "styled-components";
 import "./App.css";
 
 function App() {

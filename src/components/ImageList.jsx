@@ -1,25 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-const ImageWrapper = styled.div`
-  border: 2px solid red;
-  width: 400px;
-  height: 400px;
+const ImageContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 `;
-
 export const ImageList = ({ images }) => {
   return (
-    <ImageWrapper>
+    <ImageContainer>
       {images.map((image, index) => (
-        <div key={index}>
-          <img
-            src={image.imageUrl}
-            alt={image.caption}
-            style={{ objectFit: "contain", overflow: "hidden", width: 400, height: 400 }}
-          />
-          <p>{image.caption}</p>
-        </div>
+        <ImageWrapper key={index}>
+          <img src={image.imageUrl} alt={image.caption} />
+          <div className="overlay">{image.caption}</div>
+        </ImageWrapper>
       ))}
-    </ImageWrapper>
+    </ImageContainer>
   );
 };

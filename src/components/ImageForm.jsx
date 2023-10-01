@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const FormWrapper = styled.div`
-  border: solid 2px white;
+  
 
   input[type="text"] {
-    background-color: #d39797;
+    background-color: #f8e0c2;
   }
   ::placeholder {
     color: #060000;
